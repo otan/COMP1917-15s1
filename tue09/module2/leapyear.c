@@ -26,8 +26,20 @@ int main (int argc, char* argv []) {
 
 }
 
-// isLeapYear returns whether or not a year is a leap year
 int isLeapYear(int year) {
+    int isLeap;
+    if (year % 4 == 0) {
+        if (year % 400 == 0) {
+            isLeap = 1;
+        } else if (year % 100 != 0) {
+            isLeap = 1;
+        }
+    }
+    return isLeap;
+}
+
+// isLeapYear returns whether or not a year is a leap year
+int isLeapYearOneLine(int year) {
     // This is checking whether this is a leap year.
     // The rules are:
     // --0--
