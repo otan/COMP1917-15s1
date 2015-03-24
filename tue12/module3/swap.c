@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int real_swap(int *a, int *b) {
+void real_swap(int *a, int *b) {
     printf("swapping %d (%p) and %d (%p)\n", *a, a, *b, b);
     int temp = *b;
     *b = *a;
