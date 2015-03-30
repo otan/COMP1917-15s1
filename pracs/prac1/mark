@@ -25,9 +25,9 @@ do
         cat $f
         # echo "\n* Your Output"
         # ./$arg < $f
-        #./$arg < $f > $f.out # answer generation!
+        #./$arg < $f > $f.expected # answer generation!
         ./$arg < $f > tmp.file
-        if ! diff tmp.file $f.out > /dev/null; then
+        if ! diff tmp.file $f.expected > /dev/null; then
             echo "* [ERROR] Your program did not work with the input above."
             # cat $f.out
             echo "** you have failed a test. asian father only accepts A's!!!"
