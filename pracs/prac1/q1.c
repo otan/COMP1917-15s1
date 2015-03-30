@@ -26,15 +26,6 @@ int main(int argc, char *argv[]) {
     printf("Enter a number: ");
     // TODO(you): finish off this program!
 
-    int n;
-    scanf("%d", &n);
-    int i = 1;
-    while (i <= n) {
-        if (i % 2 == 1 || i % 5 == 0) {
-            printf("%d\n", i);
-        }
-        i++;
-    }
 
     return EXIT_SUCCESS;
 }
