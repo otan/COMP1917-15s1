@@ -3,7 +3,7 @@
 # WHY ARE YOU LOOKING AT THIS FILE?
 # ARE YOU BEING A HOOLIGAN? (Houlahan pun here)
 
-if [ -f tmp.file]; then
+if [ -f tmp.file ]; then
     echo "please delete tmp.file (rm tmp.file) before using"
     exit
 fi
@@ -28,8 +28,8 @@ do
         #./$arg < $f > $f.out # answer generation!
         ./$arg < $f > tmp.file
         if ! diff tmp.file $f.out > /dev/null; then
-            echo "* [ERROR] expected output:"
-            cat $f.out
+            echo "* [ERROR] Your program did not work with the input above."
+            # cat $f.out
             echo "** you have failed a test. asian father only accepts A's!!!"
             rm tmp.file
             exit
