@@ -1,16 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define TIMES 100
 int main(int argc, char *argv[]) {
-    int i = 0;
-    double num = 0;
-
     printf("Enter a number to increment by: ");
     double increment = 0;
     scanf("%lf", &increment);
 
-    printf("increment is %lf\n", increment);
-    while (num < 2.0) {
+    printf("increment by each time %lf, until i reach %lf (%d)\n",
+            increment, increment * TIMES, TIMES);
+
+    int i = 0;
+    double num = 0;
+    while (num < TIMES * increment) {
         printf("%d: %lf\n", i, num); 
         num += increment;
         i++;
