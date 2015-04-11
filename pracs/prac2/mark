@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# WHY ARE YOU LOOKING AT THIS FILE?
+# ARE YOU BEING A HOOLIGAN? (Houlahan pun here)
+
+if [ -f tmp.file ]; then
+    echo "please delete tmp.file (rm tmp.file) before using"
+    exit
+fi
+
+for arg in $@
+do
+    echo "************* testing $arg *************"
+    echo "** Compiling $arg"
+    if ! gcc -U_FORTIFY_SOURCE -Wall -Werror -O -o $arg $arg.c; then
+        echo "***** [ERROR] your program $arg.c did not compile. aborting! *****" 
+        exit
+    fi
+    echo "** Compile Successful"
+
+    echo "** Running Tests"
+    for f in ${arg}test/*.in
+    do
+        echo "* Testing Input (from $f)"
+        cat $f
+        echo "* Your Output"
+        ./$arg < $f
+        #./$arg < $f > $f.expected # answer generation!
+        ./$arg < $f > tmp.file
+
+        if ! diff tmp.file $f.expected > /dev/null; then
+            echo "* [ERROR] Your program did not work with the input above."
+            # cat $f.out
+            echo "** you have failed a test. asian father only accepts A's!!!"
+            rm tmp.file
+            exit
+        fi
+        echo "* passed $f"
+    done    
+    echo "** all tests passed for $arg - asian father approves."
+done
+
+rm tmp.file
