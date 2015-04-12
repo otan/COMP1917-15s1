@@ -1,7 +1,7 @@
 /*
    Write a program that prints a square banner!
    This is when on each even row, each even number (from 0) is starred, and
-        on each odd row, each odd number is coloured;
+        on each odd row, each odd number is starred.
    An example of what it looks like is below.
  
    oliver@computer: ./q2
