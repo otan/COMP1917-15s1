@@ -1,0 +1,14 @@
+typedef struct _b {
+    int length;
+    int yellowness;
+} banana;
+
+banana banana1;
+banana1.length = 2;
+banana1.yellowness = 42;
+
+banana *banana2 = malloc(sizeof(banana));
+                       // sizeof(struct _b)
+                       // sizeof(*banana2)
+(*banana2).length = 4;
+banana2->length = 4;
