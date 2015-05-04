@@ -25,7 +25,7 @@ do
         cat $f
         echo "* Your Output"
         ./$arg < $f
-        ./$arg < $f > $f.expected # answer generation!
+        #./$arg < $f > $f.expected # answer generation!
         ./$arg < $f > tmp.file
 
         if ! diff tmp.file $f.expected > /dev/null; then

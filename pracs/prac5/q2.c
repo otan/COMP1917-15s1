@@ -1,5 +1,6 @@
 /*
- * Sum all the elements in the array. 
+ * Write a program that finds the average of all the numbers in the array.
+ * If there are no numbers, the average is 0.
  *
  * Compile using: gcc -Wall -Werror -O -o q2 q2.c
  * Mark using: ./mark q2
@@ -8,8 +9,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Modify sum to sum all the elements in the array (there are n elements in arr)
-int sum(int arr[], int n) {
+// Modify the following to give the average in the array.
+// Note n contains the number of elements in the array.
+double average(int arr[], int n) {
     return 1337;
 }
 
@@ -23,6 +25,6 @@ int main(int argc, char *argv[]) {
         scanf("%d", &arr[i]);
         i++;
     }
-    printf("sum of array: %d\n", sum(arr, n));
+    printf("average of array: %lf\n", average(arr, n));
     return EXIT_SUCCESS;
 }
