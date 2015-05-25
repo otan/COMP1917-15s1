@@ -1,0 +1,9 @@
+typedef struct _complex *Complex;
+
+Complex add(Complex a, Complex b);
+Complex multiply(Complex a, Complex b);
+double mod(Complex a);
+
+// a) What do you need in Complex.h to create/destroy a complex number ADT
+// b) Write an implementation Complex.c
+// c) Write a testComplex.c to test your Complex functions

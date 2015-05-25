@@ -1,0 +1,101 @@
+Section A - Can you read 1337? you can multiple guess otherwise. (14 marks)
+
+1. What does the following code output? (2 marks)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) {
+    int i = 1;
+    while (i % 10 == 1) {
+        printf(“%d”, i);
+        i++;
+    }
+    return 0;
+}
+
+[A] 0
+[B] 1
+[C] 234567891011
+[D] 12345678910
+[E] None of the above
+
+2. What does the following code output on a 32 bit machine? (2 marks)
+#include <stdio.h>
+#include <stdlib.h>
+
+void theAnswerIsC(char *a) {
+    printf(“ %d\n”, sizeof(a));
+}
+
+int main(void) {
+    char a[10];
+    printf(“%d“, sizeof(a));
+    theAnswerIsC(a);
+    return 0;
+}
+
+    [A] 10 10
+    [B] 4 4
+    [C] 4 10
+    [D] 10 4
+    [E] None of the above
+3.  Which line does the following code potentially throw a segmentation fault? (3 marks)
+
+1. void free(nodePtr f) {
+2.    nodePtr c = f;
+3.    while (c != NULL) {
+4.        free(c);
+5.         c = c->next;
+6.     }
+7. }
+
+[A] 1
+[B] 3
+[C] 4
+[D] 5
+[E] None of the above
+
+4. What does the following code do if I use mystery(“420”) (3 marks)
+int mystery(char* s) {
+    int a = strlen(s) - 1;
+    int num = 0;
+    while (a >= 0) {
+        num *= 10;
+        num += s[a] - ‘0’;
+        a--;
+    }
+    return num;
+}
+
+    [A] it doesn’t compile
+    [B] returns number 420
+    [C] returns number 24
+    [D] returns number [4200 + (0 - ‘0’)]
+    [E] None of the above. 
+
+
+5.. What does the following code print out? (4 marks)
+
+#include <stdio.h>
+#define FOR 4
+#define FAR 100
+#define THOR (FOR * FAR)
+
+int foor(int f4) {
+    return ((f4 % FOR == 0) && (f4 % FAR != 0)) || (f4 % THOR == 0);
+}
+
+int main(void) {
+    int f = 4;
+    while (f <= FAR || !foor(f)) {
+        f++;
+    }
+    printf("%d\n", f);
+    return 0;
+}
+
+    [A] 4
+    [B] 100
+    [C] 101
+    [D] 104
+    [E] None of the above

@@ -1,0 +1,69 @@
+Section B - Play School (22 marks)
+
+6. This code compiles. What does the code print out? What is wrong with the following code in what it’s trying to do? How can it be fixed? (3 marks)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void addMe(int x, int y) {
+    x *= 2;
+    x += 6 * y;
+}
+
+int main(void) {
+    int x = 2;
+    addMe(x, 2);
+    printf(“%d\n”, x);
+    return 0;
+}
+
+7. Find two potential flaws with this code, and attempt to fix them. (4 marks)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX_LENGTH 20
+#define BUFFER_LENGTH MAX_LENGTH + 1
+
+int main(void) {
+    char s[BUFFER_LENGTH];
+    char c = getchar();
+    int i = 0;
+    while (c != EOF && i < BUFFER_LENGTH) {
+        s[i] = c;
+        i++;
+        c = getchar();
+    }
+    s[i] = ‘\0’;
+    printf(“%s\n”, s);
+    return 0;
+}
+
+8. Here is a hex dump of memory. Assume I have a character pointer ‘c’ that points to the address 0x402. What would printf("%s", c) print out? (4 marks)
+
+0x400: 0x4e 0x4f 0x62 0x75 
+0x404: 0x63 0x6b 0x6c 0x61 
+0x408: 0x6e 0x64 0x20 0x42 
+0x40B: 0x57 0x55 0x4b 0x53 
+0x410: 0x21 0x31 0x0A 0x00 
+0x414: 0x0B 0xAB 0x22 0xAB
+
+What would be the value of each variable if each line of code with a a., b., etc is executed (note any errors)? (5 marks)
+int     n; // assume n is at address 0x600
+int    *p, *q; // assume p is addressed to be 0x400 and q is address to be 0x500 in memory
+p = &n;
+a. *p =  25;
+b. *q = 24;
+c.  q =  p;
+d. *q =  8;
+e. printf(“%d”, *p + *q * n);
+
+9. Explain where each of the variables in the following function would be in memory. (4 marks)
+
+void foo(int a) { 
+    int b = 2; 
+    char *c = “HELLO WORLD!”;
+    char  *d = malloc(1000);
+}
+
+10. In the code above (question 9), there is a memory leak. Explain what it is, and how to resolve it. (2 marks)
