@@ -82,7 +82,7 @@ int mystery(char* s) {
 #define THOR (FOR * FAR)
 
 int foor(int f4) {
-    return ((f4 % FOR == 0) && (f4 % FAR != 0)) || (f4 % THOR == 0);
+    return (f4 % FOR == 0) && ((f4 % FAR != 0)) || (f4 % THOR == 0));
 }
 
 int main(void) {

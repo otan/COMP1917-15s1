@@ -48,7 +48,7 @@ int main(void) {
 0x410: 0x21 0x31 0x0A 0x00 
 0x414: 0x0B 0xAB 0x22 0xAB
 
-What would be the value of each variable if each line of code with a a., b., etc is executed (note any errors)? (5 marks)
+9. What would be the value of each variable if each line of code with a a., b., etc is executed (note any errors)? (5 marks)
 int     n; // assume n is at address 0x600
 int    *p, *q; // assume p is addressed to be 0x400 and q is address to be 0x500 in memory
 p = &n;
@@ -58,7 +58,7 @@ c.  q =  p;
 d. *q =  8;
 e. printf(“%d”, *p + *q * n);
 
-9. Explain where each of the variables in the following function would be in memory. (4 marks)
+10. Explain where each of the variables in the following function would be in memory. (4 marks)
 
 void foo(int a) { 
     int b = 2; 
@@ -66,4 +66,4 @@ void foo(int a) {
     char  *d = malloc(1000);
 }
 
-10. In the code above (question 9), there is a memory leak. Explain what it is, and how to resolve it. (2 marks)
+11. In the code above (question 9), there is a memory leak. Explain what it is, and how to resolve it. (2 marks)
